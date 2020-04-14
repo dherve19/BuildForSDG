@@ -8,7 +8,7 @@ const covid19ImpactEstimator = (data) => {
       hospitalBedsByRequestedTime: (data.totalHospitlBeds * 0.35) - data.reportedCases * 10 * 1024 * 0.15 > 0 ? Math.ceil((data.totalHospitlBeds * 0.35) - data.reportedCases * 10 * 1024 * 0.15) : Math.floor((data.totalHospitlBeds * 0.35) - data.reportedCases * 10 * 1024 * 0.15),
       casesForICUByRequestedTime: Math.ceil(data.reportedCases * 10 * 1024 * 0.05),
       casesForVentilatorsByRequestedTime: Math.ceil(data.reportedCases * 10 * 1024 * 0.02),
-      dollarsInFlight: (data.reportedCases * 10 * 1024 * 0.65) * data.region.avgDailyIncomePopulation * 30
+      dollarsInFlight: (data.reportedCases * 10 * 1024 * 0.65) * data.region.avgDailyIncomePopulation * 30,
     },
     severeImpact: {
       currentlyInfected: data.reportedCases * 50,
@@ -17,8 +17,8 @@ const covid19ImpactEstimator = (data) => {
       hospitalBedsByRequestedTime: (data.totalHospitlBeds * 0.35) - data.reportedCases * 10 * 1024 * 0.15 > 0 ? Math.ceil((data.totalHospitlBeds * 0.35) - data.reportedCases * 50 * 1024 * 0.15) : Math.floor((data.totalHospitlBeds * 0.35) - data.reportedCases * 50 * 1024 * 0.15),
       casesForICUByRequestedTime: Math.ceil(data.reportedCases * 50 * 1024 * 0.05),
       casesForVentilatorsByRequestedTime: Math.ceil(data.reportedCases * 50 * 1024 * 0.02),
-      dollarsInFlight: (data.reportedCases * 50 * 1024 * 0.65) * data.region.avgDailyIncomePopulation * 30
-    }
+      dollarsInFlight: (data.reportedCases * 50 * 1024 * 0.65) * data.region.avgDailyIncomePopulation * 30,
+    },
 
   };
   return date;
